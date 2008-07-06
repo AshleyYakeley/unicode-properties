@@ -1,0 +1,27 @@
+Name:	unicode-properties
+Version: 0.1
+Build-depends:
+	base,
+	containers>=0.1,
+	array>=0.1
+Extensions:
+Exposed-Modules:
+	Data.Char.Properties.GeneralCategory
+	Data.Char.Properties.BidiCategory
+	Data.Char.Properties.Case
+	Data.Char.Properties.Misc
+	Data.Char.Properties.Decomposition
+	Data.Char.Properties.Names
+	Data.Char.Properties
+Other-Modules:
+	Data.Char.Properties.GeneralCategoryData
+	Data.Char.Properties.GeneralCategoryTypes
+	Data.Char.Properties.BidiCategoryData
+	Data.Char.Properties.BidiCategoryTypes
+	Data.Char.Properties.CaseData
+	Data.Char.Properties.MiscData
+	Data.Char.Properties.DecompositionData
+	Data.Char.Properties.DecompositionTypes
+	Data.Char.Properties.NamesData
+	Data.Char.Properties.PrivateData
+GHC-Options: -Wall -Werror
