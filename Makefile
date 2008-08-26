@@ -27,24 +27,26 @@ SOURCES = \
 
 sources: $(SOURCES)
 
-configure: sources
-	runhaskell Setup.hs configure --enable-library-profiling
-
-build: configure
-	runhaskell Setup.hs build
-
-haddock: configure
-	runhaskell Setup.hs haddock
-
-install: build haddock
-	sudo runhaskell Setup.hs install
+# Building
 
 clean:
-	runhaskell Setup.hs clean
+	cabal clean
 	rm -f $(HIER)/*Data.hs $(HIER)/UnicodeData.m4 $(HIER)/UnicodePropList.m4
 
 reallyclean: clean
 	rm -f $(HIER)/*.data
+
+configure: sources
+	cabal configure --enable-library-profiling
+
+build: configure
+	cabal build --ghc-options="-Wall -Werror"
+
+haddock: configure
+	cabal haddock
+
+install: build haddock
+	cabal install --user
 
 # switch off intermediate file deletion
 .SECONDARY:
