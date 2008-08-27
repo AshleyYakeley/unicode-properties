@@ -1,4 +1,11 @@
 name:	unicode-properties
+category:	Text
+description:	Unicode 3.2 character properties
+synopsis:	Unicode 3.2 character properties
+author:	Ashley Yakeley <ashley@semantic.org>
+license:	BSD3
+license-file:	LICENSE
+maintainer:	Ashley Yakeley <ashley@semantic.org>
 version: 0.1
 build-depends:
 	base,

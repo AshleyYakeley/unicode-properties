@@ -48,6 +48,9 @@ haddock: configure
 install: build haddock
 	cabal install --user
 
+sdist: configure
+	cabal sdist
+
 # switch off intermediate file deletion
 .SECONDARY:
 
