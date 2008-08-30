@@ -1,7 +1,6 @@
 module Data.Char.Properties
 (
 	module Data.Char.Properties.GeneralCategory,
-	module Data.Char.Properties.Names,
 	module Data.Char.Properties.BidiCategory,
 	module Data.Char.Properties.Decomposition,
 	module Data.Char.Properties.Misc,
@@ -12,6 +11,5 @@ module Data.Char.Properties
 	import Data.Char.Properties.Misc;
 	import Data.Char.Properties.Decomposition;
 	import Data.Char.Properties.BidiCategory;
-	import Data.Char.Properties.Names;
 	import Data.Char.Properties.GeneralCategory;
 }

@@ -19,7 +19,6 @@ exposed-modules:
 	Data.Char.Properties.Case
 	Data.Char.Properties.Misc
 	Data.Char.Properties.Decomposition
-	Data.Char.Properties.Names
 	Data.Char.Properties
 other-modules:
 	Data.Char.Properties.GeneralCategoryData
@@ -30,5 +29,4 @@ other-modules:
 	Data.Char.Properties.MiscData
 	Data.Char.Properties.DecompositionData
 	Data.Char.Properties.DecompositionTypes
-	Data.Char.Properties.NamesData
 	Data.Char.Properties.PrivateData

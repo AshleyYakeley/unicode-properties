@@ -19,7 +19,6 @@ $(HIER)/%.data:
 SOURCES = \
 	$(HIER)/PrivateData.hs \
 	$(HIER)/GeneralCategoryData.hs \
-	$(HIER)/NamesData.hs \
 	$(HIER)/BidiCategoryData.hs \
 	$(HIER)/DecompositionData.hs \
 	$(HIER)/MiscData.hs \

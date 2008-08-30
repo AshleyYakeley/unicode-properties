@@ -52,3 +52,6 @@
 ^Data/Char/Properties/.*Data\.hs$
 ^Data/Char/Properties/UnicodeData\.m4$
 ^Data/Char/Properties/UnicodePropList\.m4$
+^names/dist($|/)
+^names/Data/Char/Properties/.*Data\.hs$
+

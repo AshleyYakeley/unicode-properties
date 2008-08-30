@@ -1,0 +1,20 @@
+name:	unicode-names
+category:	Text
+description:	Unicode 3.2.0 character names
+synopsis:	Unicode 3.2.0 character names
+author:	Ashley Yakeley <ashley@semantic.org>
+license:	BSD3
+license-file:	LICENSE
+maintainer:	Ashley Yakeley <ashley@semantic.org>
+version: 0.1
+build-depends:
+	base,
+	containers>=0.1,
+	array>=0.1,
+	unicode-properties==0.1
+build-type: Simple
+extensions:
+exposed-modules:
+	Data.Char.Properties.Names
+other-modules:
+	Data.Char.Properties.NamesData

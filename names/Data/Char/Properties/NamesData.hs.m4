@@ -1,12 +1,12 @@
 changequote({{,}})dnl
 module Data.Char.Properties.NamesData (getCharacterName) where
 {
-	import Data.Char.Properties.PrivateData;
 	import Data.Array;
 	import Prelude;
 
 	getCharacterName :: Char -> String;
-	getCharacterName c = handleOmittedRange (getFromArray c) getFromArray c where
+	getCharacterName = getFromArray where
+--	getCharacterName c = handleOmittedRange (getFromArray c) getFromArray c where
 	{
 		theArray :: Array Char String;
 		theArray = accumArray (\_ a -> a) "<undefined>" ('\0','\x10FFFF') theList;
