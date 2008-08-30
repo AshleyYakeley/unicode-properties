@@ -50,7 +50,10 @@ install: build haddock
 sdist: configure
 	cabal sdist
 
+install-names: install
+	cd names && make install
+
 # switch off intermediate file deletion
 .SECONDARY:
 
-.PHONY: default sources configure build haddock install clean reallyclean
+.PHONY: default sources configure build haddock install clean reallyclean install-name
