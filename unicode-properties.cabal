@@ -13,6 +13,7 @@ build-depends:
 	array>=0.1
 build-type: Simple
 extensions:
+	EmptyDataDecls
 exposed-modules:
 	Data.Char.Properties.GeneralCategory
 	Data.Char.Properties.BidiCategory
@@ -21,6 +22,7 @@ exposed-modules:
 	Data.Char.Properties.Decomposition
 	Data.Char.Properties
 other-modules:
+	Data.Char.Properties.Version
 	Data.Char.Properties.GeneralCategoryData
 	Data.Char.Properties.GeneralCategoryTypes
 	Data.Char.Properties.BidiCategoryData
