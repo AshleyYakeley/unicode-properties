@@ -6,6 +6,9 @@ HIER	= Data/Char/Properties
 $(HIER)/%Data.hs: $(HIER)/%Data.hs.m4 $(HIER)/UnicodeData.m4 $(HIER)/UnicodePropList.m4
 	m4 -DDATAFILE="$(HIER)/UnicodeData.m4" -DPROPFILE="$(HIER)/UnicodePropList.m4" $< > $@
 
+$(HIER)/Derivation.hs: $(HIER)/Derivation.hs.m4 DerivationData.m4
+	m4 -DDATAFILE="DerivationData.m4" $< > $@
+
 $(HIER)/UnicodeData.m4: $(HIER)/UnicodeData.data
 	sed -e 's/;/}},{{/g; s/^/uchar({{/; s/$$/}})dnl/' $< > $@
 
@@ -22,6 +25,7 @@ SOURCES = \
 	$(HIER)/BidiCategoryData.hs \
 	$(HIER)/DecompositionData.hs \
 	$(HIER)/MiscData.hs \
+	$(HIER)/Derivation.hs \
 	$(HIER)/CaseData.hs
 
 sources: $(SOURCES)
@@ -30,7 +34,7 @@ sources: $(SOURCES)
 
 clean:
 	cabal clean
-	rm -f $(HIER)/*Data.hs $(HIER)/UnicodeData.m4 $(HIER)/UnicodePropList.m4
+	rm -f $(HIER)/*Data.hs $(HIER)/UnicodeData.m4 $(HIER)/UnicodePropList.m4 $(HIER)/Derivation.hs
 
 reallyclean: clean
 	rm -f $(HIER)/*.data

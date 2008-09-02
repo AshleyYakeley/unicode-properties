@@ -29,6 +29,7 @@ other-modules:
 	Data.Char.Properties.BidiCategoryTypes
 	Data.Char.Properties.CaseData
 	Data.Char.Properties.MiscData
+	Data.Char.Properties.Derivation
 	Data.Char.Properties.DecompositionData
 	Data.Char.Properties.DecompositionTypes
 	Data.Char.Properties.PrivateData
