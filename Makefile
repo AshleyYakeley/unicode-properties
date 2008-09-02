@@ -3,8 +3,8 @@ default: build
 URLGET	= curl -o
 HIER	= Data/Char/Properties
 
-$(HIER)/%Data.hs: $(HIER)/%Data.hs.m4 $(HIER)/UnicodeData.m4 $(HIER)/UnicodePropList.m4
-	m4 -DDATAFILE="$(HIER)/UnicodeData.m4" -DPROPFILE="$(HIER)/UnicodePropList.m4" $< > $@
+$(HIER)/%Data.hs: $(HIER)/%Data.hs.m4 $(HIER)/UnicodeData.m4 $(HIER)/UnicodePropList.m4 PropList.m4
+	m4 -DDATAFILE="$(HIER)/UnicodeData.m4" -DPROPFILE="$(HIER)/UnicodePropList.m4" -DMISCDOCFILE="PropList.m4" $< > $@
 
 $(HIER)/Derivation.hs: $(HIER)/Derivation.hs.m4 DerivationData.m4
 	m4 -DDATAFILE="DerivationData.m4" $< > $@

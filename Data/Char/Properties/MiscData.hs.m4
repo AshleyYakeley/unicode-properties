@@ -41,8 +41,13 @@ include(DATAFILE)dnl
 
 
 	-- Properties
+define({{PROPERTY}},{{define(DOC_$1,{{patsubst({{translit({{$2}},{{
+}},{{ }})}},{{"}},{{\\"}})}})}})dnl
+include(MISCDOCFILE)dnl
 define({{propname_id}},{{{{is}}patsubst({{$1}},{{_}},{{}})}})dnl
 define({{propbegin}},{{ifelse($1,{{}},{{}},{{
+	-- | DOC_$1
+	;
 	propname_id($1) :: Char -> Bool;
 }})}})dnl
 define({{propend}},{{ifelse($1,{{}},{{}},{{	propname_id(curpropname) _ = False;
