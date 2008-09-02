@@ -6,8 +6,14 @@ module Data.Char.Properties.Misc
 ) where
 {
 	import Data.Char.Properties.MiscData;
+	import Data.Char.Properties.GeneralCategory;
 	import Data.Char.Properties.Derivation;
 	import Prelude;
+
+	-- | Returns true if the general category is Lt.
+	;
+	isTitlecase :: Char -> Bool;
+	isTitlecase c = getGeneralCategory c == GcLt;
 
 	-- Note: this is not defined by Unicode.
 	-- Also, a single line break can be an 0D 0A sequence.
