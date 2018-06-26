@@ -1,0 +1,8 @@
+packages:
+- unicode-properties
+- unicode-names
+
+resolver: lts-11.15
+
+ghc-options:
+    "$locals": -Werror
