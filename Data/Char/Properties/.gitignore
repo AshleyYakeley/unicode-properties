@@ -1,0 +1,5 @@
+*\.data
+*Data\.hs
+UnicodeData\.m4
+UnicodePropList\.m4
+Derivation\.hs
