@@ -1,0 +1,22 @@
+name: unicode-names
+version: "5.1.0.0"
+category: Text
+description: Unicode 5.1.0 character names
+synopsis: Unicode 5.1.0 character names
+author: Ashley Yakeley <ashley@semantic.org>
+license: BSD3
+license-file: LICENSE
+maintainer: Ashley Yakeley <ashley@semantic.org>
+
+library:
+    source-dirs: .
+    dependencies:
+      - base
+      - containers >= 0.1
+      - array >= 0.1
+      - unicode-properties == 5.1.0.0
+    exposed-modules:
+      - Data.Char.Properties.Names
+    other-modules:
+      - Data.Char.Properties.NamesData
+    ghc-options: +RTS -K20M -RTS
