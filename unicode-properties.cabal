@@ -1,8 +1,8 @@
 name:	unicode-properties
-version: 3.2.0.0
+version: 5.1.0.0
 category:	Text
-description:	Unicode 3.2.0 character properties
-synopsis:	Unicode 3.2.0 character properties
+description:	Unicode 5.1.0 character properties
+synopsis:	Unicode 5.1.0 character properties
 author:	Ashley Yakeley <ashley@semantic.org>
 license:	BSD3
 license-file:	LICENSE

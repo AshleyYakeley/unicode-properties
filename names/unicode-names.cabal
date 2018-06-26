@@ -1,8 +1,8 @@
 name:	unicode-names
-version: 3.2.0.0
+version: 5.1.0.0
 category:	Text
-description:	Unicode 3.2.0 character names
-synopsis:	Unicode 3.2.0 character names
+description:	Unicode 5.1.0 character names
+synopsis:	Unicode 5.1.0 character names
 author:	Ashley Yakeley <ashley@semantic.org>
 license:	BSD3
 license-file:	LICENSE
@@ -11,9 +11,10 @@ build-depends:
 	base,
 	containers>=0.1,
 	array>=0.1,
-	unicode-properties==3.2.0.0
+	unicode-properties==5.1.0.0
 build-type: Simple
 extensions:
+ghc-options: +RTS -K20M -RTS
 exposed-modules:
 	Data.Char.Properties.Names
 other-modules:

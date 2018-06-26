@@ -55,3 +55,5 @@
 ^Data/Char/Properties/Derivation\.hs$
 ^names/dist($|/)
 ^names/Data/Char/Properties/.*Data\.hs$
+^UCD$
+^UCD.zip$

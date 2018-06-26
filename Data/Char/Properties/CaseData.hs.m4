@@ -5,8 +5,10 @@ module Data.Char.Properties.CaseData where
 	import Data.Map;
 	import Prelude;
 
-	toUpperCase :: Char -> Char;
-	toUpperCase c = findWithDefault c c theMap where
+	-- | Convert the character to a single uppercase character, if it exists
+	;
+	toUpperCase1 :: Char -> Char;
+	toUpperCase1 c = findWithDefault c c theMap where
 	{
 		theMap :: Map Char Char;
 		theMap = fromList theList;
@@ -21,8 +23,10 @@ include(DATAFILE)dnl
 		];
 	};
 
-	toLowerCase :: Char -> Char;
-	toLowerCase c = findWithDefault c c theMap where
+	-- | Convert the character to a single lowercase character, if it exists
+	;
+	toLowerCase1 :: Char -> Char;
+	toLowerCase1 c = findWithDefault c c theMap where
 	{
 		theMap :: Map Char Char;
 		theMap = fromList theList;
@@ -37,8 +41,10 @@ include(DATAFILE)dnl
 		];
 	};
 
-	toTitleCase :: Char -> Char;
-	toTitleCase c = findWithDefault c c theMap where
+	-- | Convert the character to a single titlecase character, if it exists
+	;
+	toTitleCase1 :: Char -> Char;
+	toTitleCase1 c = findWithDefault c c theMap where
 	{
 		theMap :: Map Char Char;
 		theMap = fromList theList;

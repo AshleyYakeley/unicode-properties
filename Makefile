@@ -9,15 +9,24 @@ $(HIER)/%Data.hs: $(HIER)/%Data.hs.m4 $(HIER)/UnicodeData.m4 $(HIER)/UnicodeProp
 $(HIER)/Derivation.hs: $(HIER)/Derivation.hs.m4 DerivationData.m4
 	m4 -DDATAFILE="DerivationData.m4" $< > $@
 
-$(HIER)/UnicodeData.m4: $(HIER)/UnicodeData.data
-	sed -e 's/;/}},{{/g; s/^/uchar({{/; s/$$/}})dnl/' $< > $@
+$(HIER)/UnicodeData.m4: UCD/UnicodeData.txt
+	tr -d \\r < $< | sed -e 's/;/}},{{/g; s/^/uchar({{/; s/$$/}})dnl/' > $@
 
-$(HIER)/UnicodePropList.m4: $(HIER)/PropList.data
-	sed -e 's/#.*$$//;s/^ *\([.0-9A-F]*\) *; *\([0-9A-Za-z_]*\)/charprop(\2,\1)/;s/\.\./,/;/^$$/ d' $<	> $@
+$(HIER)/UnicodePropList.m4: UCD/PropList.txt
+	tr -d \\r < $< | sed -e 's/#.*$$//;s/^ *\([.0-9A-F]*\) *; *\([0-9A-Za-z_]*\)/charprop(\2,\1)/;s/\.\./,/;/^$$/ d' > $@
 
-$(HIER)/%.data:
-	rm -f $@
-	$(URLGET) $@ http://www.unicode.org/Public/3.2-Update/$*-3.2.0.txt
+$(HIER)/SpecialCasing.m4: UCD/SpecialCasing.txt
+	tr -d \\r < $< | sed -e 's/#.*$$//; s/; $$//; s/; */}},{{/g; /^$$/ d; s/^/uchar({{/; s/$$/}})dnl/' > $@
+
+UCD.zip:
+	$(URLGET) $@ http://www.unicode.org/Public/zipped/5.1.0/UCD.zip
+
+UCD: UCD.zip
+	rm -rf $@
+	mkdir $@
+	unzip $< -d $@
+
+UCD/%: UCD
 
 SOURCES = \
 	$(HIER)/PrivateData.hs \
