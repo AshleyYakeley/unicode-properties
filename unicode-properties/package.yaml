@@ -12,7 +12,7 @@ default-extensions:
     - EmptyDataDecls
 
 library:
-    source-dirs: .
+    source-dirs: lib
     dependencies:
       - base
       - containers >= 0.1
