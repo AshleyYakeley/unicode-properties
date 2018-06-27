@@ -14,7 +14,6 @@ library:
       - base
       - containers >= 0.1
       - array >= 0.1
-      - unicode-properties == 5.1.0.0
     exposed-modules:
       - Data.Char.Properties.Names
     other-modules:
