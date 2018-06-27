@@ -21,7 +21,11 @@ data/UCD: data/UCD.zip
 	mkdir $@
 	unzip $< -d $@
 
-data/UCD/%: data/UCD
+data/UCD/UnicodeData.txt: data/UCD
+
+data/UCD/PropList.txt: data/UCD
+
+data/UCD/SpecialCasing.txt: data/UCD
 
 data/UnicodeData.m4: data/UCD/UnicodeData.txt
 	tr -d \\r < $< | sed -e 's/;/}},{{/g; s/^/uchar({{/; s/$$/}})dnl/' > $@
