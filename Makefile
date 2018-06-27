@@ -43,7 +43,13 @@ build: datafiles
 	cd unicode-names && make
 	stack build
 
+clean:
+	stack clean
+	cd unicode-names && make clean
+	cd unicode-properties && make clean
+	rm -rf data
+
 # switch off intermediate file deletion
 .SECONDARY:
 
-.PHONY: default build datafiles
+.PHONY: default build datafiles clean

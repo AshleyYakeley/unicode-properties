@@ -10,7 +10,10 @@ SOURCES = \
 
 sources: $(SOURCES)
 
+clean:
+	rm -rf $(SOURCES)
+
 # switch off intermediate file deletion
 .SECONDARY:
 
-.PHONY: default sources
+.PHONY: default sources clean
